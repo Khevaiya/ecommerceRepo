@@ -56,13 +56,13 @@ public class UserController {
     @PostMapping("/signin")
     public ResponseEntity<?> signIn(@RequestParam String email, @RequestParam String password) {
         // Validate email format
+        System.out.println("signIn called"+email+" "+password);
         if (!isValidEmail(email)) {
             return ResponseEntity.badRequest().body("Invalid email format.");
         }
 
         // Find user by email
         Optional<User> userOptional = userService.signIn(email, password);
-
         // If user exists and password matches
         if (userOptional.isPresent()) {
             User user = userOptional.get();

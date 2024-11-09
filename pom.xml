@@ -52,6 +52,8 @@
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 
+
+
 		<!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
@@ -66,10 +68,17 @@
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
 		<!-- Spring Boot Starter Security for authentication and authorization -->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-security</artifactId>-->
+<!--		</dependency>-->
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
+			<version>3.3.5</version>
 		</dependency>
+
 		<!-- JSON Web Token (JWT) for token-based authentication -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>

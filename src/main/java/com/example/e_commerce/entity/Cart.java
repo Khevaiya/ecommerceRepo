@@ -2,6 +2,8 @@ package com.example.e_commerce.entity;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,10 +13,13 @@ public class Cart {
     @Id
     private String id;
     private String userId;
-    private List<CartItem> items;
-
+    private List<CartItem> items=new ArrayList<>();;
     public Cart(String userId) {
         this.userId = userId;
+        this.items = new ArrayList<>(); // Ensure it's always initialized
+    }
+    public Cart() {
+
     }
 
     // Adds an item to the cart or updates the quantity if the item already exists

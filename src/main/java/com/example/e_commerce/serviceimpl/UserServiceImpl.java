@@ -23,16 +23,30 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User signUp(User user) {
+        // Encrypt the password before saving it
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 
+    // Sign In
     @Override
     public Optional<User> signIn(String email, String password) {
-        Optional<User> user = userRepository.findByEmail(email);
-        if (user.isPresent() && passwordEncoder.matches(password, user.get().getPassword())) {
-            return user;
+        Optional<User> userOptional = userRepository.findByEmail(email);
+
+        if (userOptional.isPresent()) {
+            System.out.println("presnet");
+            User user = userOptional.get();
+            // Check if the password matches the stored hash
+            if (passwordEncoder.matches(password, user.getPassword())) {
+                // Password matches, return the user
+
+                return Optional.of(user);
+            } else {
+                // Password doesn't match
+                return Optional.empty();
+            }
         }
+        // User with given email doesn't exist
         return Optional.empty();
     }
 }

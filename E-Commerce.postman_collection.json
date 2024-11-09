@@ -1,0 +1,473 @@
+{
+	"info": {
+		"_postman_id": "e3e74b64-d03d-4239-82b2-1116c08067b2",
+		"name": "E-Commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36924129"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": ". Sign Up",
+					"item": [
+						{
+							"name": "http://localhost:8080/api/users/signup",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"khevaiya ghode\",\r\n  \"email\": \"khevaiyaghode18@example.com\",\r\n  \"password\": \"khevaiya@1234\",\r\n  \"address\": \"123 indore, City\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/users/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users",
+										"signup"
+									]
+								},
+								"description": "Generated from cURL: curl -X POST http://localhost:8080/api/users/signup \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john.doe@example.com\",\r\n  \"password\": \"strongpassword\",\r\n  \"address\": \"123 Main St, City, Country\"\r\n}'\r\n"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Sign In",
+					"item": [
+						{
+							"name": "http://localhost:8080/api/users/signin",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "your_email@example.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "your_password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/users/signin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users",
+										"signin"
+									]
+								},
+								"description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/users/signin\" \\\r\n     -d \"email=your_email@example.com&password=your_password\" \\\r\n     -H \"Content-Type: application/x-www-form-urlencoded\"\r\n"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product Management",
+			"item": [
+				{
+					"name": "Add Product",
+					"item": [
+						{
+							"name": "http://localhost:8080/api/products/addproduct",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"name\": \"Product Name\",\r\n            \"description\": \"Product Description\",\r\n            \"price\": 100.0,\r\n            \"category\": \"Category Name\",\r\n            \"stock\": 50\r\n          }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/products/addproduct",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products",
+										"addproduct"
+									]
+								},
+								"description": "Generated from cURL: curl -X POST http://localhost:8080/api/products/addproduct \\\r\n     -H \"Content-Type: application/json\" \\\r\n     -d '{\r\n            \"name\": \"Product Name\",\r\n            \"description\": \"Product Description\",\r\n            \"price\": 100.0,\r\n            \"category\": \"Category Name\",\r\n            \"stock\": 50\r\n          }'\r\n"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Update Product",
+					"item": [
+						{
+							"name": "http://localhost:8080/api/products/updateproduct/{productId}",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"name\": \"Updated Product Name\",\r\n            \"description\": \"Updated Product Description\",\r\n            \"price\": 120.0,\r\n            \"category\": \"Updated Category Name\",\r\n            \"stock\": 100\r\n          }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/products/updateproduct/{productId}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products",
+										"updateproduct",
+										"{productId}"
+									]
+								},
+								"description": "Generated from cURL: curl -X PUT http://localhost:8080/api/products/updateproduct/{productId} \\\r\n     -H \"Content-Type: application/json\" \\\r\n     -d '{\r\n            \"name\": \"Updated Product Name\",\r\n            \"description\": \"Updated Product Description\",\r\n            \"price\": 120.0,\r\n            \"category\": \"Updated Category Name\",\r\n            \"stock\": 100\r\n          }'\r\n"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete Product",
+					"item": [
+						{
+							"name": "http://localhost:8080/api/products/deleteproduct/{productId}",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/products/deleteproduct/{productId}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products",
+										"deleteproduct",
+										"{productId}"
+									]
+								},
+								"description": "Generated from cURL: curl -X DELETE http://localhost:8080/api/products/deleteproduct/{productId}\r\n"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All Products",
+					"item": [
+						{
+							"name": "http://localhost:8080/api/products/products",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/products/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"products",
+										"products"
+									]
+								},
+								"description": "Generated from cURL: curl -X GET http://localhost:8080/api/products/products\r\n"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cart Management",
+			"item": [
+				{
+					"name": "Add Product to Cart",
+					"item": [
+						{
+							"name": "http://localhost:8080/cart/add/{userId}",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\": \"{productId}\",\r\n    \"quantity\": {quantity}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/cart/add/{userId}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cart",
+										"add",
+										"{userId}"
+									]
+								},
+								"description": "Generated from cURL: curl -X POST \"http://localhost:8080/cart/add/{userId}\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n    \"productId\": \"{productId}\",\r\n    \"quantity\": {quantity}\r\n}'\r\n"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Update Cart",
+					"item": [
+						{
+							"name": "http://localhost:8080/cart/update/{userId}",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\": \"{productId}\",\r\n    \"quantity\": {quantity}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/cart/update/{userId}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cart",
+										"update",
+										"{userId}"
+									]
+								},
+								"description": "Generated from cURL: curl -X PUT \"http://localhost:8080/cart/update/{userId}\" \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n    \"productId\": \"{productId}\",\r\n    \"quantity\": {quantity}\r\n}'\r\n"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete Product from Cart",
+					"item": [
+						{
+							"name": "http://localhost:8080/cart/delete/{userId}/{productId}",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/cart/delete/{userId}/{productId}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cart",
+										"delete",
+										"{userId}",
+										"{productId}"
+									]
+								},
+								"description": "Generated from cURL: curl -X DELETE \"http://localhost:8080/cart/delete/{userId}/{productId}\"\r\n"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Cart",
+					"item": [
+						{
+							"name": "http://localhost:8080/cart/{userId}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/cart/{userId}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cart",
+										"{userId}"
+									]
+								},
+								"description": "Generated from cURL: curl -X GET \"http://localhost:8080/cart/{userId}\"\r\n"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Order Management",
+			"item": [
+				{
+					"name": "Get All Orders",
+					"item": [
+						{
+							"name": "http://localhost:8080/api/orders/getallorders",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/orders/getallorders",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"orders",
+										"getallorders"
+									]
+								},
+								"description": "Generated from cURL: curl -X GET http://localhost:8080/api/orders/getallorders\r\n"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Place Order",
+					"item": [
+						{
+							"name": "http://localhost:8080/api/orders/{userId}/placeorder",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"shippingAddress\": \"123 Elm St, Springfield\",\r\n    \"products\": [\r\n        {\"productId\": \"product1\", \"quantity\": 2, \"price\": 50.0},\r\n        {\"productId\": \"product2\", \"quantity\": 1, \"price\": 30.0}\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/orders/{userId}/placeorder",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"orders",
+										"{userId}",
+										"placeorder"
+									]
+								},
+								"description": "Generated from cURL: curl -X POST http://localhost:8080/api/orders/{userId}/placeorder \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n    \"shippingAddress\": \"123 Elm St, Springfield\",\r\n    \"products\": [\r\n        {\"productId\": \"product1\", \"quantity\": 2, \"price\": 50.0},\r\n        {\"productId\": \"product2\", \"quantity\": 1, \"price\": 30.0}\r\n    ]\r\n}'\r\n"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Orders by Customer ID",
+					"item": []
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
