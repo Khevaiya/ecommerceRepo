@@ -69,7 +69,7 @@ public class ProductController {
     }
 
     // Get all products
-    @GetMapping
+    @GetMapping("/products")
     public ResponseEntity<?> getAllProducts() {
         List<Product> products = productService.getAllProducts();
         if (products.isEmpty()) {

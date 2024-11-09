@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/carts")
+@RequestMapping("/cart")
 public class CartController {
     private final CartService cartService;
 
@@ -27,7 +27,7 @@ public class CartController {
 
 
     // Add a product to the cart
-    @PostMapping("/{userId}/add")
+    @PostMapping("/add/{userId}")
     public ResponseEntity<?> addProductToCart(@PathVariable String userId,
                                               @RequestBody Cart.CartItem cartItemRequest) {
         // Validate that the product exists
@@ -46,7 +46,7 @@ public class CartController {
     }
 
     // Update a product in the cart
-    @PutMapping("/{userId}/update")
+    @PutMapping("/update/{userId}")
     public ResponseEntity<?> updateCart(@PathVariable String userId,
                                         @RequestBody Cart.CartItem cartItemRequest) {
         // Validate that the product exists in the cart
@@ -76,7 +76,7 @@ public class CartController {
     }
 
     // Remove a product from the cart
-    @DeleteMapping("/{userId}/remove/{productId}")
+    @DeleteMapping("/delete/{userId}/{productId}")
     public ResponseEntity<?> removeProductFromCart(@PathVariable String userId,
                                                    @PathVariable String productId) {
         // Validate that the product exists in the cart

@@ -16,7 +16,7 @@ public class OrderController {
     private OrderService orderService;
 
     // Place an order
-    @PostMapping("/{userId}/place")
+    @PostMapping("/{userId}/placeorder")
     public ResponseEntity<Order> placeOrder(@PathVariable String userId,
                                             @RequestBody Order orderRequestDTO) {
         Order order = orderService.placeOrder(userId, orderRequestDTO.getShippingAddress());
@@ -24,7 +24,7 @@ public class OrderController {
     }
 
     // Get all orders
-    @GetMapping
+    @GetMapping("/getallorders")
     public ResponseEntity<List<Order>> getAllOrders() {
         List<Order> orders = orderService.getAllOrders();
         return ResponseEntity.ok(orders);
